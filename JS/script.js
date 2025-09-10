@@ -1,4 +1,3 @@
-// Efecto de Máquina de Escribir (Typewriter)
 const words = ["experiencias intuitivas.", "soluciones creativas.", "aplicaciones web modernas."];
 let i = 0;
 let j = 0;
@@ -7,7 +6,7 @@ let isDeleting = false;
 const typewriterElement = document.querySelector('.typewriter');
 
 function type() {
-    currentWord = words[i];
+    currentWord = words[is];
     if (isDeleting) {
         typewriterElement.textContent = currentWord.substring(0, j--);
     } else {
@@ -15,17 +14,56 @@ function type() {
     }
 
     if (!isDeleting && j === currentWord.length) {
-        // Pausa al final de la palabra
+
         setTimeout(() => isDeleting = true, 2000);
     } else if (isDeleting && j === 0) {
         isDeleting = false;
-        i = (i + 1) % words.length; // Pasa a la siguiente palabra
+        i = (i + 1) % words.length;
     }
     
-    // Velocidad de escritura
     const typingSpeed = isDeleting ? 100 : 200;
     setTimeout(type, typingSpeed);
 }
 
-// Inicia el efecto cuando la página carga
-document.addEventListener('DOMContentLoaded', type);
+document.addEventListener('DOMContentLoaded', function() {
+    const words = ["experiencias intuitivas.", "soluciones creativas.", "aplicaciones web modernas."];
+    let i = 0;
+    let j = 0;
+    let currentWord = "";
+    let isDeleting = false;
+    const typewriterElement = document.querySelector('.typewriter');
+
+    function type() {
+        if (!typewriterElement) {
+            return;
+        }
+
+        currentWord = words[i];
+        if (isDeleting) {
+
+            typewriterElement.textContent = currentWord.substring(0, j--);
+        } else {
+
+            typewriterElement.textContent = currentWord.substring(0, j++);
+        }
+
+        if (!isDeleting && j === currentWord.length + 1) {
+            isDeleting = true;
+            setTimeout(type, 2000);
+            return;
+        }
+
+
+        if (isDeleting && j === -1) {
+            isDeleting = false;
+            i = (i + 1) % words.length;
+            setTimeout(type, 500);
+            return;
+        }
+
+        const typingSpeed = isDeleting ? 100 : 200;
+        setTimeout(type, typingSpeed);
+    }
+
+    type();
+});
