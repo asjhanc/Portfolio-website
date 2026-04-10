@@ -26,7 +26,12 @@ function type() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const words = ["experiencias intuitivas.", "soluciones creativas.", "aplicaciones web modernas."];
+    const words = [
+        "interfaces web intuitivas.", 
+        "microservicios eficientes.", 
+        "soluciones tecnológicas escalables.",
+        "automatización de procesos."
+    ];
     let i = 0;
     let j = 0;
     let currentWord = "";
@@ -34,34 +39,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const typewriterElement = document.querySelector('.typewriter');
 
     function type() {
-        if (!typewriterElement) {
-            return;
-        }
+        if (!typewriterElement) return;
 
         currentWord = words[i];
+        
         if (isDeleting) {
-
             typewriterElement.textContent = currentWord.substring(0, j--);
         } else {
-
             typewriterElement.textContent = currentWord.substring(0, j++);
         }
 
         if (!isDeleting && j === currentWord.length + 1) {
             isDeleting = true;
-            setTimeout(type, 2000);
+            setTimeout(type, 2000); // Pausa al final de la palabra
             return;
         }
-
 
         if (isDeleting && j === -1) {
             isDeleting = false;
             i = (i + 1) % words.length;
-            setTimeout(type, 500);
+            setTimeout(type, 500); // Pausa antes de la siguiente palabra
             return;
         }
 
-        const typingSpeed = isDeleting ? 100 : 200;
+        const typingSpeed = isDeleting ? 50 : 100;
         setTimeout(type, typingSpeed);
     }
 
