@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Efecto Máquina de Escribir (Optimizado)
+    // 1. Efecto Máquina de Escribir (Más veloz y dinámico)
     const words = [
-        "automatización de procesos.", 
-        "microservicios eficientes.", 
+        "interfaces interactivas.", 
         "arquitecturas escalables.",
-        "soluciones integrales."
+        "soluciones eficientes.",
+        "microservicios ágiles."
     ];
     let i = 0; let j = 0;
     let isDeleting = false;
@@ -22,29 +22,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!isDeleting && j === currentWord.length + 1) {
             isDeleting = true;
-            setTimeout(type, 2000);
+            setTimeout(type, 1500); // Pausa al completar la frase
             return;
         }
 
         if (isDeleting && j === -1) {
             isDeleting = false;
             i = (i + 1) % words.length;
-            setTimeout(type, 500);
+            setTimeout(type, 300); // Pausa antes de la nueva frase
             return;
         }
 
-        const typingSpeed = isDeleting ? 40 : 100;
+        const typingSpeed = isDeleting ? 30 : 80;
         setTimeout(type, typingSpeed);
     }
     type();
 
-    // 2. Animaciones de Scroll (Efecto Reveal para impresionar)
+    // 2. Animaciones de Scroll (Aparición fluida)
     function revealOnScroll() {
         var reveals = document.querySelectorAll('.reveal');
         for (var i = 0; i < reveals.length; i++) {
             var windowHeight = window.innerHeight;
             var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementVisible = 100; // Cuándo aparece el elemento
+            var elementVisible = 120; 
 
             if (elementTop < windowHeight - elementVisible) {
                 reveals[i].classList.add('active');
@@ -53,6 +53,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     window.addEventListener('scroll', revealOnScroll);
-    // Disparar una vez al cargar para mostrar el inicio
-    revealOnScroll(); 
+    revealOnScroll(); // Ejecutar al inicio por si ya están en pantalla
 });
