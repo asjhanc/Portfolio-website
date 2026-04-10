@@ -1,13 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // 1. Efecto Máquina de Escribir (Más veloz y dinámico)
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Efecto Máquina de Escribir Fluido
     const words = [
-        "interfaces interactivas.", 
+        "experiencias únicas.", 
         "arquitecturas escalables.",
         "soluciones eficientes.",
-        "microservicios ágiles."
+        "interfaces modernas."
     ];
-    let i = 0; let j = 0;
-    let isDeleting = false;
+    let i = 0, j = 0, isDeleting = false;
     const typewriterElement = document.querySelector('.typewriter');
 
     function type() {
@@ -22,36 +22,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!isDeleting && j === currentWord.length + 1) {
             isDeleting = true;
-            setTimeout(type, 1500); // Pausa al completar la frase
+            setTimeout(type, 2000);
             return;
         }
 
         if (isDeleting && j === -1) {
             isDeleting = false;
             i = (i + 1) % words.length;
-            setTimeout(type, 300); // Pausa antes de la nueva frase
+            setTimeout(type, 400);
             return;
         }
 
-        const typingSpeed = isDeleting ? 30 : 80;
-        setTimeout(type, typingSpeed);
+        setTimeout(type, isDeleting ? 40 : 100);
     }
     type();
 
-    // 2. Animaciones de Scroll (Aparición fluida)
-    function revealOnScroll() {
-        var reveals = document.querySelectorAll('.reveal');
-        for (var i = 0; i < reveals.length; i++) {
-            var windowHeight = window.innerHeight;
-            var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementVisible = 120; 
+    // 2. Intersection Observer para Animaciones "Reveal" ultra suaves
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
 
-            if (elementTop < windowHeight - elementVisible) {
-                reveals[i].classList.add('active');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Solo anima una vez para no saturar
             }
-        }
-    }
+        });
+    }, observerOptions);
 
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Ejecutar al inicio por si ya están en pantalla
+    document.querySelectorAll('.reveal').forEach((el) => {
+        observer.observe(el);
+    });
+
+    // 3. Efecto Parallax sutil en los blobs de fondo al mover el mouse
+    const blobs = document.querySelectorAll('.blob');
+    document.addEventListener('mousemove', (e) => {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+
+        blobs.forEach((blob, index) => {
+            const speed = (index + 1) * 20;
+            const xOffset = (window.innerWidth / 2 - e.pageX) / speed;
+            const yOffset = (window.innerHeight / 2 - e.pageY) / speed;
+            blob.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+        });
+    });
 });

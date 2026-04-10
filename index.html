@@ -3,144 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jhan Antonio Salazar | Front-End & Full Stack</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Jhan Salazar | Full Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header class="header">
-        <a href="#inicio" class="logo">Jhan<span>.dev</span></a>
-        <nav class="navbar">
-            <a href="#sobre-mi">Sobre Mí</a>
-            <a href="#trayectoria">Trayectoria</a>
-            <a href="#contacto" class="nav-btn">¡Hablemos!</a>
-        </nav>
-    </header>
+    <div class="blob-cont">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="glass-overlay"></div>
 
-    <main>
-        <section id="inicio" class="hero reveal">
-            <div class="hero-content centered">
-                <div class="floating-badge">Ingeniero de Software UPC</div>
-                <h1 class="gradient-text">Jhan Antonio Salazar</h1>
-                <p class="subtitle">Especialista en Front-End creando <span class="typewriter"></span></p>
-                
-                <div class="hero-buttons">
-                    <a href="#trayectoria" class="btn btn-primary">Descubre mi trabajo</a>
-                    <a href="https://www.linkedin.com/in/jhanc-antonio-salazar/" target="_blank" class="btn btn-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/asjhanc" target="_blank" class="btn btn-icon"><i class="fab fa-github"></i></a>
+    <nav class="modern-nav">
+        <div class="logo">jhan<span>.</span></div>
+        <div class="nav-links">
+            <a href="#experiencia">Experiencia</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="mailto:jhanc.22.17@gmail.com" class="nav-cta">¡Hablemos!</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <section class="bento-grid">
+            
+            <div class="bento-item hero-item">
+                <div class="badge">Ingeniero de Software UPC</div>
+                <h1>Jhan Antonio <br><span class="gradient-text">Salazar</span></h1>
+                <p class="hero-desc">Desarrollador Full Stack. Transformo ideas complejas en <span class="typewriter"></span></p>
+                <div class="hero-actions">
+                    <a href="https://www.linkedin.com/in/jhanc-antonio-salazar/" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/asjhanc" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-        </section>
 
-        <section id="sobre-mi" class="about reveal">
-            <div class="centered-container">
-                <h2 class="section-title">Mi ADN <span>Tecnológico</span></h2>
-                <p class="about-text">
-                    Soy un desarrollador apasionado por el diseño de interfaces interactivas y la robustez del backend. Mi objetivo no es solo escribir código, sino construir ecosistemas digitales completos. Transformo sistemas legados en experiencias de usuario modernas y automatizo procesos para hacer la vida más fácil.
-                </p>
-                <div class="skills-showcase">
-                    <div class="skill-pill frontend"><i class="fab fa-react"></i> Front-End (JS, Flutter, CSS)</div>
-                    <div class="skill-pill backend"><i class="fab fa-python"></i> Back-End (Python, Laravel)</div>
-                    <div class="skill-pill data"><i class="fas fa-database"></i> Bases de Datos (PostgreSQL, SQL Server)</div>
-                    <div class="skill-pill agile"><i class="fas fa-sync-alt"></i> Metodologías Ágiles (Scrum)</div>
+            <div class="bento-item about-item reveal">
+                <h3>Mi ADN <i class="fas fa-dna"></i></h3>
+                <p>No solo escribo código; optimizo ecosistemas. Me apasiona refactorizar sistemas legados, diseñar interfaces que enamoren al usuario y construir microservicios robustos. <strong>Eficiencia y diseño en cada línea.</strong></p>
+            </div>
+
+            <div class="bento-item stack-item reveal">
+                <h3>Tech Stack</h3>
+                <div class="stack-grid">
+                    <div class="tech"><i class="fab fa-python"></i> Python</div>
+                    <div class="tech"><i class="fab fa-laravel"></i> Laravel</div>
+                    <div class="tech"><i class="fab fa-react"></i> React/Flutter</div>
+                    <div class="tech"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="tech"><i class="fas fa-database"></i> SQL / Postgres</div>
                 </div>
             </div>
+
         </section>
 
-        <section id="trayectoria" class="journey reveal">
-            <div class="centered-container">
-                <h2 class="section-title">Mi <span>Trayectoria</span></h2>
-                <p class="section-subtitle">Un recorrido por mis roles profesionales y soluciones desarrolladas.</p>
-                
-                <div class="journey-grid">
-                    
-                    <div class="journey-card">
-                        <div class="card-glow"></div>
-                        <div class="card-inner">
-                            <div class="card-header">
-                                <img src="assets/vonex.png" alt="Academia Vonex" class="company-logo">
-                                <span class="badge job">Rol Presencial</span>
-                            </div>
-                            <h3>Front-End / Full Stack</h3>
-                            <p class="date">Octubre 2025 - Actualidad | Academia VONEX</p>
-                            <p class="description">Lidero la refactorización de vistas UI/UX y desarrollé desde cero un microservicio OMR en Python, integrándolo con la intranet en Laravel y PostgreSQL para automatizar la calificación de exámenes.</p>
-                            <div class="tech-tags">
-                                <span>Python</span><span>Laravel</span><span>PostgreSQL</span>
-                            </div>
+        <section id="experiencia" class="section-mt">
+            <h2 class="section-heading">Experiencia <span>Destacada</span></h2>
+            
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <div class="exp-header">
+                            <img src="assets/vonex.png" alt="Vonex" class="exp-logo">
+                            <span class="exp-date">Oct 2025 — Actualidad</span>
+                        </div>
+                        <h3>Front-End / Full Stack <span>(Presencial)</span></h3>
+                        <h4>Academia VONEX</h4>
+                        <p>Creación desde cero de un <strong>Microservicio OMR en Python</strong> para calificación automatizada. Integración con intranet Laravel (PHP) y PostgreSQL. Liderazgo en refactorización de vistas UI/UX de sistemas legados.</p>
+                        <div class="tags">
+                            <span>Python</span><span>Laravel</span><span>PostgreSQL</span>
                         </div>
                     </div>
+                </div>
 
-                    <div class="journey-card">
-                        <div class="card-glow"></div>
-                        <div class="card-inner">
-                            <div class="card-header">
-                                <img src="assets/Imagen1.png" alt="Inklop" class="company-logo">
-                                <span class="badge project">Plataforma Web</span>
-                            </div>
-                            <h3>Desarrollo Interactivo</h3>
-                            <p class="date">Junio 2024 - Enero 2025 | Inklop</p>
-                            <p class="description">Maquetación y diseño de una interfaz web intuitiva y responsiva con Flutter y Dart. Creé un puente visual perfecto entre marcas e influencers optimizando el análisis de datos interactivo.</p>
-                            <div class="tech-tags">
-                                <span>Flutter</span><span>Dart</span><span>UI/UX</span>
-                            </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <div class="exp-header">
+                            <img src="assets/logo.png" alt="File Security" class="exp-logo">
+                            <span class="exp-date">May 2025 — Jul 2025</span>
+                        </div>
+                        <h3>Desarrollador Front-End <span>(Scrum)</span></h3>
+                        <h4>File Security Perú</h4>
+                        <p>Consumo de APIs RESTful para la sincronización de datos en tiempo real en una aplicación de gestión de contratos. Trabajo 100% bajo metodologías ágiles.</p>
+                        <div class="tags">
+                            <span>JavaScript</span><span>API REST</span><span>Scrum</span>
                         </div>
                     </div>
-
-                    <div class="journey-card">
-                        <div class="card-glow"></div>
-                        <div class="card-inner">
-                            <div class="card-header">
-                                <img src="assets/logo.png" alt="File Security" class="company-logo">
-                                <span class="badge vol">Voluntariado Ágil</span>
-                            </div>
-                            <h3>Front-End Developer</h3>
-                            <p class="date">Mayo 2025 - Julio 2025 | File Security Perú</p>
-                            <p class="description">Implementé el lado del cliente para una aplicación de gestión de contratos. Consumo de APIs RESTful en tiempo real bajo un estricto marco de trabajo Scrum.</p>
-                            <div class="tech-tags">
-                                <span>JavaScript</span><span>API REST</span><span>Scrum</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="journey-card">
-                        <div class="card-glow"></div>
-                        <div class="card-inner">
-                            <div class="card-header">
-                                <img src="assets/merk.png" alt="Merck Investments" class="company-logo">
-                                <span class="badge project">Plugin Financiero</span>
-                            </div>
-                            <h3>Automatización de Pagos</h3>
-                            <p class="date">Abril 2024 - Mayo 2024 | Merck Investments</p>
-                            <p class="description">Desarrollo de un plugin de suscripción segura. Automaticé el flujo de pagos recurrentes, desde el registro hasta el débito automático y el historial de transacciones.</p>
-                            <div class="tech-tags">
-                                <span>JavaScript</span><span>Automatización</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
 
-        <section id="contacto" class="contact reveal">
-            <div class="centered-container banner-contact">
-                <h2>¿Hacemos equipo?</h2>
-                <p>Si buscas un perfil que combine diseño atractivo con código eficiente y orientación a resultados, soy la persona indicada.</p>
-                <div class="action-buttons">
-                    <a href="mailto:jhanc.22.17@gmail.com" class="btn btn-primary"><i class="fas fa-paper-plane"></i> jhanc.22.17@gmail.com</a>
-                    <a href="tel:+51967412326" class="btn btn-outline"><i class="fas fa-phone-alt"></i> +51 967412 326</a>
+        <section id="proyectos" class="section-mt">
+            <h2 class="section-heading">Proyectos <span>Innovadores</span></h2>
+            
+            <div class="projects-bento">
+                <div class="project-card reveal">
+                    <div class="img-wrapper">
+                        <img src="assets/Imagen1.png" alt="Inklop">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Inklop</h3>
+                                <p>Interfaz web intuitiva y responsiva con Flutter para conectar marcas con influencers.</p>
+                                <div class="tags"><span>Flutter</span><span>Dart</span><span>UI/UX</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="img-wrapper">
+                        <img src="assets/merk.png" alt="Merck">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Merck Investments</h3>
+                                <p>Plugin de pagos recurrentes. Flujos financieros, logueo y débito automático.</p>
+                                <div class="tags"><span>JavaScript</span><span>Automatización</span></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <footer class="modern-footer reveal">
+            <h2>¿Listo para llevar tu proyecto al siguiente nivel?</h2>
+            <a href="mailto:jhanc.22.17@gmail.com" class="big-cta">Escríbeme <i class="fas fa-arrow-right"></i></a>
+            <p class="copyright">© 2026 Jhan Antonio Salazar. Hecho con código y diseño.</p>
+        </footer>
+
     </main>
-
-    <footer class="footer">
-        <p>Diseñado y desarrollado con 💻 y ☕ por Jhan Antonio Salazar &copy; 2026</p>
-    </footer>
 
     <script src="js/script.js"></script>
 </body>
